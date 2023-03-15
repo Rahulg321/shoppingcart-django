@@ -1,0 +1,152 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        {%if title%}
+            <title>Django-Blog - {{title}}</title>
+        {%else%}
+            <title>Django-Blog</title>
+        {%endif%}
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static 'blog/style.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+          
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-md navbar-light">
+            <a class="navbar-brand text-white" href="{% url 'blog-home' %}">Django Shopping Cart</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            {% if user.is_authenticated %}
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="{% url 'blog-review' %}">REVIEWS</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="{% url 'blog-home' %}">CART</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="{% url 'profile' %}">PROFILE</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="{% url 'logout' %}">LOGOUT</a>
+                </li>
+              </ul>
+            </div>
+
+            {% else %}
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="{% url 'blog-review' %}">REVIEWS</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="{% url 'blog-home' %}">CART</a>
+                </li>
+                <li class="nav-item">
+
+                  <a class="nav-link text-white" href="{% url 'login' %}">LOGIN</a>
+
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="{% url 'register' %}">REGISTER</a>
+                </li>
+              </ul>
+            </div>
+
+            {% endif %}
+          </nav>
+          <br>
+          <main role="main" class="container">
+            <div class="row">
+              <div class="col-md-8">
+                {% if messages %}
+
+                  {% for message in messages %}
+                                  <!-- will update itself according to the type of message received -->
+                      <div class = 'alert alert-{{ message.tags }}'>
+                        {{ message }}
+                      </div>
+                  {% endfor %}
+                {% endif %}
+                {% block content %}{% endblock %}
+              </div>
+              <div class="col-md-4">
+                <div class="content-section">
+                  <h3>Information Sidebar</h3>
+                  <p class='text-muted'>keep yourself updated
+                    <ul class="list-group">
+                      <li class="list-group-item list-group-item-light">Latest Products</li>
+                      <li class="list-group-item list-group-item-light">Announcements</li>
+                      <li class="list-group-item list-group-item-light">Events</li>
+                      <li class="list-group-item list-group-item-light">etc</li>
+                    </ul>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </main>
+        <!-- <footer class="bg-light py-5">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-4">
+                  <h4>About Us</h4>
+                  <p>This is my pratice website. I am making to learn Django.
+                    Pretty soon I will make one for someone else.
+                  </p>
+                </div>
+                <div class="col-md-4">
+                  <h4>Contact Us</h4>
+                  <p>1282/b Rupa Mistri Street, Ludhiana<br>Phone: 9803239930<br>Email: rg5353070@gmail.com</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Follow Us</h4>
+                    <ul class="list-inline">
+                      
+                      <li class="list-inline-item">
+                        <a href="https://www.twitter.com/example" target="_blank">
+                          <i class="fab fa-twitter fa-2x"></i>
+                        </a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a href="https://www.instagram.com/example" target="_blank">
+                          <i class="fab fa-github fa-2x"></i>
+                        </a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a href="https://www.linkedin.com/company/example" target="_blank">
+                          <i class="fab fa-linkedin fa-2x"></i>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+              </div>
+              <hr>
+              <p class="text-center">© 2023. All rights reserved.</p>
+            </div>
+          </footer>
+           -->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+
+    </body>
+
+</html>
