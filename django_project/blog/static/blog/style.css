@@ -37,8 +37,33 @@ html {
     border-radius: 20px;
     background-color: #2E4F4F;
 }
+.row{
+    padding-bottom: 28px;
+}
+
+.box-element {
+    box-shadow: hsl(0,0%, 80%) 0 0 16px;
+    background-color: #fff;
+    border-radius: 4px;
+    padding:10px;
+}
+
+.picnail {
+    width: 100%;
+    vertical-align: middle;
+    border-style: none;
+    height: 230px;
+    border:2px solid black;
+}
 
 
+
+
+
+
+.product{
+    border-radius: 0 0 4px 4px;
+}
 
 .content-section {
     background: #ffffff;
