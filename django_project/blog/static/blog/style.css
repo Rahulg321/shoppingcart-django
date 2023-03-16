@@ -27,15 +27,15 @@ html {
 }
 
 .navbar-nav .nav-link:hover {
-    border: 2px solid black;
-    border-radius: 20px;
-    background-color: #2E4F4F;
+     color: #111;
+    transform: scale(1.1);
+    text-shadow: none;
 }
 
 .navbar-brand:hover {
-    border: 2px solid black;
-    border-radius: 20px;
-    background-color: #2E4F4F;
+    color: #111;
+    transform: scale(1.1);
+    text-shadow: none;
 }
 .row{
     padding-bottom: 28px;
@@ -56,13 +56,47 @@ html {
     border:2px solid black;
 }
 
-
-
-
-
-
 .product{
     border-radius: 0 0 4px 4px;
+}
+
+.cart-row{
+    display:flex;
+    align-items: flex-stretch;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #ececec;
+}
+
+.row-image{
+    width:100px;
+    height:100px;
+}
+
+.quantity{
+    display: inline-block;
+    font-weight: 700px;
+    padding-right: 12px;
+}
+
+.chg-quantity {
+    width:12px;
+    cursor: pointer;
+    display: block;
+    margin-bottom: 6px;
+}
+.chg-quantity2 {
+    width:12px;
+    cursor: pointer;
+    display: block;
+    margin-top: 5px;
+
+}
+
+.form-field{
+    display:inline-block;
+    width:257px;
+    padding:7px;
 }
 
 .content-section {

@@ -15,3 +15,13 @@ def review(request):
         'posts': Post.objects.all()
     }
     return render(request, 'blog/review.html', context)
+
+
+def cart(request):
+
+    return render(request, 'blog/cart.html')
+
+
+def checkout(request):
+
+    return render(request, 'blog/checkout.html')
