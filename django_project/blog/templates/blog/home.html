@@ -12,7 +12,7 @@
           <hr>
 <!-- creating custom attributes in HTML -->
           <button data-product = {{product.id}} data-action = "add" class =  'btn btn-outline-secondary add-btn update-cart'>Add to Cart</button>
-        <a class = 'btn btn-outline-success' href = '#'>View</a>
+        <a class = 'btn btn-outline-success' href = "{% url 'blog-cart' %}">View</a>
         <h4 style="display:inline-block;float:right;">₹{{product.price|floatformat:2}}</h4>
         </div>
      </div>
