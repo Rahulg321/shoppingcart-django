@@ -4,7 +4,7 @@ html {
 }
 
 
-.navbar{
+.navbar {
     background-color: #2C3333;
 }
 
@@ -23,11 +23,12 @@ html {
 }
 
 .navbar-nav {
-    font-size: 22px;
+    font-size: 16px;
+    font-weight: 600;
 }
 
 .navbar-nav .nav-link:hover {
-     color: #111;
+    color: #111;
     transform: scale(1.1);
     text-shadow: none;
 }
@@ -37,15 +38,16 @@ html {
     transform: scale(1.1);
     text-shadow: none;
 }
-.row{
+
+.row {
     padding-bottom: 28px;
 }
 
 .box-element {
-    box-shadow: hsl(0,0%, 80%) 0 0 16px;
+    box-shadow: hsl(0, 0%, 80%) 0 0 16px;
     background-color: #fff;
     border-radius: 4px;
-    padding:10px;
+    padding: 10px;
 }
 
 .picnail {
@@ -53,50 +55,51 @@ html {
     vertical-align: middle;
     border-style: none;
     height: 230px;
-    border:2px solid black;
+    border: 2px solid black;
 }
 
-.product{
+.product {
     border-radius: 0 0 4px 4px;
 }
 
-.cart-row{
-    display:flex;
+.cart-row {
+    display: flex;
     align-items: flex-stretch;
     padding-bottom: 10px;
     margin-bottom: 10px;
     border-bottom: 2px solid #ececec;
 }
 
-.row-image{
-    width:100px;
-    height:100px;
+.row-image {
+    width: 100px;
+    height: 100px;
 }
 
-.quantity{
+.quantity {
     display: inline-block;
     font-weight: 700px;
     padding-right: 12px;
 }
 
 .chg-quantity {
-    width:12px;
+    width: 12px;
     cursor: pointer;
     display: block;
     margin-bottom: 6px;
 }
+
 .chg-quantity2 {
-    width:12px;
+    width: 12px;
     cursor: pointer;
     display: block;
     margin-top: 5px;
 
 }
 
-.form-field{
-    display:inline-block;
-    width:257px;
-    padding:7px;
+.form-field {
+    display: inline-block;
+    width: 257px;
+    padding: 7px;
 }
 
 .content-section {

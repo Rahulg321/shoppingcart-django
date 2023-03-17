@@ -2,6 +2,12 @@ from django.shortcuts import render
 from django.http import JsonResponse
 import json
 from .models import *
+from django.views.generic import (ListView, 
+                                  CreateView, 
+                                  DetailView)
+
+
+#classbasedviews list/delete/create
 
 
 
@@ -15,10 +21,26 @@ def home(request):
 
 
 def review(request):
+#list view ->  since our home page is listing our all of our blogs
     context = {
         'posts': Post.objects.all()
     }
     return render(request, 'blog/review.html', context)
+
+class PostListView(ListView):
+    #model to interact with
+    model = Post
+    
+    template_name = 'blog/review.html'
+    context_object_name = 'posts'
+    
+    ordering = ['-date_posted']
+
+
+class PostDetailView(DetailView):
+    #model to interact with
+    model = Post
+    
 
 
 def cart(request):
