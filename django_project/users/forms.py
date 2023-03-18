@@ -28,5 +28,5 @@ class UserRegisterForm(UserCreationForm):
         # the model it interacts with
         model = User
         # the order in which the fields will be shown in the form
-        fields = ['first_name', 'last_name', 'username', 'email', 'password1', 'password2']
+        fields = ['username', 'email', 'password1', 'password2']
 
